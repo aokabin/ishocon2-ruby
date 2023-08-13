@@ -8,8 +8,10 @@ set-file: pull
 reset-nginx:
 	sudo rm /var/log/nginx/access.log && sudo systemctl restart nginx
 
-restart: set-file reset-nginx
-	sudo rm /var/log/mysql-slow.log
+reset-mysql:
+	sudo rm /var/log/mysql/mysql-slow.log
+
+restart: set-file reset-nginx reset-mysql
 	sudo systemctl restart ishocon nginx mysql
 
 slow:
