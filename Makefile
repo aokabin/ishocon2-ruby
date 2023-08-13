@@ -2,7 +2,7 @@ pull:
 	git pull origin main
 
 set-file: pull
-	sudo cp nginx.conf cd /etc/nginx/nginx.conf
+	sudo cp nginx.conf /etc/nginx/nginx.conf
 	sudo cp mysql.conf.d/mysqld.conf /etc/mysql/mysql.conf.d/mysqld.cnf
 
 reset-nginx:
