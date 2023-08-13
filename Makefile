@@ -9,3 +9,4 @@ reset-nginx:
 	sudo rm /var/log/nginx/access.log && sudo systemctl restart nginx
 
 restart: pull set-file reset-nginx
+	sudo systemctl restart ishocon
