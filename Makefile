@@ -1,7 +1,7 @@
 pull:
 	git pull origin main
 
-set-file: pull
+set-file:
 	sudo cp nginx.conf /etc/nginx/nginx.conf
 	sudo cp mysql.conf.d/mysqld.conf /etc/mysql/mysql.conf.d/mysqld.cnf
 
@@ -16,3 +16,6 @@ restart: set-file reset-nginx reset-mysql
 
 slow:
 	sudo mysqldumpslow /var/log/mysql/mysql-slow.log
+
+alp:
+	alp json --file /var/log/nginx/access.log -m '/candidates/.+, /political_parties/.+'
